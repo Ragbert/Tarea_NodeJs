@@ -1,0 +1,51 @@
+import fetch from 'node-fetch';
+import express from 'express';
+
+
+//const express = require('express');
+//const fetch = require('node-fetch').default;
+const app = express();
+
+fetch("https://www.raydelto.org/agenda.php")
+    .then((respuesta) => {
+        return respuesta.json()
+}) .then ((resp) =>{
+    console.log(resp);
+})
+
+/*
+app.use(express.json());
+
+const api = [
+    {id: 1, name: 'Ragbert', lastname: 'Polanco', telefono: '820-043-9876', enroll: true},
+    {id: 2, name: 'Diolfy', lastname: 'Mercedes', telefono: '829-987-7654', entoll: false},
+    {id: 3, name: 'Nachely', lastname: 'de Jesús', telefono: '840-098-4577', entoll: true},
+]
+
+ppp.get('/', (req ,res) => {
+    res.send('Tarea_5')
+});
+
+app.get('/api/api', (req, res)=>{
+    res.send(api);
+});
+
+app.get('/api/api/:id', (req,res)=>{
+    const usuarios = api.finc(c => c.id ===parseInt(req.params.id));
+    if (!usuarios) return res.status(404).send('Usuario no encontrado');
+    else res.send(usuario);
+})
+
+app.post('/api/api', (req,res) =>{
+    const usuario = {
+        id: api.length +1,
+        name: req.body.name,
+        lastname: req.body.lastname,
+        telefono: req.body.telefono,
+        enroll: (req.body.enroll === 'true'),
+    }
+
+    api.push(usuarios);
+    res.send(usuario);
+});
+*/
